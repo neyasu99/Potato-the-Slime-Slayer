@@ -42,6 +42,8 @@ public class NPCBehavior : MonoBehaviour
         Coin.text = "20";
         Weapon.text = "1";
         Potion.text = "1";
+        WeaponPrice.text = "-" + (Int32.Parse(Weapon.text) * 2).ToString();
+        PotionPrice.text = "-" + (Int32.Parse(Potion.text) * 3).ToString();
     }
 
     void OnTriggerEnter2D(Collider2D collider2D)
@@ -75,19 +77,14 @@ public class NPCBehavior : MonoBehaviour
             MarketWeapon.SetActive(true);
             MarketPotion.SetActive(true);
             WeaponPrice.text = "-" + (Int32.Parse(Weapon.text) * 2).ToString();
-            PotionPrice.text = "-" + (Int32.Parse(Potion.text) * 2).ToString();
+            PotionPrice.text = "-" + (Int32.Parse(Potion.text) * 3).ToString();
             int coin = Int32.Parse(Coin.text);
             int weaponPrice = Int32.Parse(WeaponPrice.text);
             int potionPrice = Int32.Parse(PotionPrice.text);
-
-            CheckPrices(coin, weaponPrice, WeaponPrice);
-            CheckPrices(coin, potionPrice, PotionPrice);
-        }
-
-        void CheckPrices(int coin, int price, Text Price)
-        {
-            if (coin < price)
-                Price.color = Color.red;
+            if (coin < weaponPrice)
+                WeaponPrice.color = Color.red;
+            if(coin < potionPrice)
+                PotionPrice.color = Color.red;
         }
     }
 }
