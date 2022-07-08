@@ -6,11 +6,13 @@ public class PlayerAttac : MonoBehaviour
 {
     private GameObject attacArea = default;
     private bool attacking = false;
+    private float timeToAttac = 0.25f;
+    private float timer = 0f;
     public Animator animator;
 
     void Start()
     {
-        attacArea = transform.GetChild(0).gameObject;
+        attacArea = transform.GetChild(1).gameObject;
     }
 
     void Update()
@@ -22,8 +24,14 @@ public class PlayerAttac : MonoBehaviour
 
         if (attacking)
         {
-            attacking = false;
-            attacArea.SetActive(attacking);
+            timer += Time.deltaTime;
+
+            if (timer >= timeToAttac)
+            {
+                timer = 0;
+                attacking = false;
+                attacArea.SetActive(attacking);
+            }
         }
     }
 

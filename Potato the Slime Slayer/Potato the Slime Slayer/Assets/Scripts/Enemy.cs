@@ -8,10 +8,11 @@ public class Enemy : MonoBehaviour
     public float moveSpeed = 0.5f;
     private Rigidbody2D rb;
     private Vector2 movement;
+    private int damage = 5;
 
     void Start()
     {
-        rb = this.GetComponent<Rigidbody2D>();
+        rb = this.GetComponent<Rigidbody2D>(); 
     }
 
     void Update()
@@ -29,5 +30,14 @@ public class Enemy : MonoBehaviour
     void moveCharacter(Vector2 direction)
     {
         rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
+    }
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.GetComponent<Health>() != null)
+        {
+            Health health = collider.GetComponent<Health>();
+            health.Damage(damage);
+        }
     }
 }
