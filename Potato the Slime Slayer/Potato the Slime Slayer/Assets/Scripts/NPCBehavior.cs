@@ -39,11 +39,7 @@ public class NPCBehavior : MonoBehaviour
         MarketFrame.enabled = false;
         MarketWeapon.SetActive(false);
         MarketPotion.SetActive(false);
-        Coin.text = "20";
-        Weapon.text = "1";
-        Potion.text = "1";
-        WeaponPrice.text = "-" + (Int32.Parse(Weapon.text) * 2).ToString();
-        PotionPrice.text = "-" + (Int32.Parse(Potion.text) * 3).ToString();
+        
     }
 
     void OnTriggerEnter2D(Collider2D collider2D)
@@ -76,8 +72,8 @@ public class NPCBehavior : MonoBehaviour
             MarketFrame.enabled = true;
             MarketWeapon.SetActive(true);
             MarketPotion.SetActive(true);
-            WeaponPrice.text = "-" + (Int32.Parse(Weapon.text) * 2).ToString();
-            PotionPrice.text = "-" + (Int32.Parse(Potion.text) * 3).ToString();
+            WeaponPrice.text = (Int32.Parse(Weapon.text) * 2).ToString();
+            PotionPrice.text = (Int32.Parse(Potion.text) * 3).ToString();
             int coin = Int32.Parse(Coin.text);
             int weaponPrice = Int32.Parse(WeaponPrice.text);
             int potionPrice = Int32.Parse(PotionPrice.text);
@@ -85,6 +81,29 @@ public class NPCBehavior : MonoBehaviour
                 WeaponPrice.color = Color.red;
             if(coin < potionPrice)
                 PotionPrice.color = Color.red;
+        }
+
+        if(MarketFrame.enabled == true)
+        {
+            int weaponPrice = Int32.Parse(Weapon.text);
+            if (weaponPrice == 0)
+            {
+                WeaponPrice.text = "2";
+            }
+            else
+            {
+                WeaponPrice.text = (weaponPrice * 2).ToString();
+            }
+
+            int potionPrice = Int32.Parse(Potion.text);
+            if (potionPrice == 0)
+            {
+                PotionPrice.text = "3";
+            }
+            else
+            {
+                PotionPrice.text = (potionPrice * 3).ToString();
+            }
         }
     }
 }

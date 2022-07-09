@@ -1,16 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField]
     private GameObject enemy;
-    [SerializeField]
-    public float enemiesNumber;
+
+    private float enemiesNumber;
 
     void Start()
     {
+        enemiesNumber = Random.Range(1, 5);
+
         while (enemiesNumber > 1)
         {
             enemiesNumber--;

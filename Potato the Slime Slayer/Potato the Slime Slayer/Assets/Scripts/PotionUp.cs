@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -19,26 +17,16 @@ public class PotionUp : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         int coin = Int32.Parse(Coin.text);
-        int price = Int32.Parse(Price.text.Remove(0, 1));
+        int price = Int32.Parse(Price.text);
         if (coin > 0 && price < coin)
         {
             Potion.text = (Int32.Parse(Potion.text) + 1).ToString();
             Coin.text = (coin - price).ToString();
-            Price.text = "-" + (price * 3).ToString();
+            Price.text = (price * 3).ToString();
         }
         else
         {
             Price.color = Color.red;
         }
-    }
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
     }
 }

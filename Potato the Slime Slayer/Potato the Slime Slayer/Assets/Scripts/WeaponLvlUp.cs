@@ -19,12 +19,12 @@ public class WeaponLvlUp : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         int coin = Int32.Parse(Coin.text);
-        int price = Int32.Parse(Price.text.Remove(0, 1));
+        int price = Int32.Parse(Price.text);
         if (coin > 0 && price < coin)
         {
             Weapon.text = (Int32.Parse(Weapon.text) + 1).ToString();
             Coin.text = (coin - price).ToString();
-            Price.text = "-" + (price * 2).ToString();
+            Price.text = (price * 2).ToString();
         }
         else
         {

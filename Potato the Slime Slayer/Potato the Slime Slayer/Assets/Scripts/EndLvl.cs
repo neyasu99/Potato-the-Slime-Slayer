@@ -1,12 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 
 public class EndLvl : MonoBehaviour
 {
     [SerializeField]
     private int enemiesLeft;
+
+    [SerializeField]
+    private GameObject sign;
 
     // Update is called once per frame
     void Update()
@@ -20,7 +20,7 @@ public class EndLvl : MonoBehaviour
 
         if (enemiesLeft <= 0)
         {
-            SceneManager.LoadScene("EndLvl");
+            sign.SetActive(true);
         }
     }
 }

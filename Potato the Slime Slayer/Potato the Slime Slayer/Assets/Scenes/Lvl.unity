@@ -121,6 +121,24 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &90425597 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3558283329318938151, guid: dc723fbf012e9e94c946379b9da13b1b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1726848181}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &90425602 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1499582552999946161, guid: dc723fbf012e9e94c946379b9da13b1b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1726848181}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90425597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58f710540f9aa7f4ba466af73287f00e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &426376282 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 245851480305462253, guid: dc723fbf012e9e94c946379b9da13b1b,
@@ -144,6 +162,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -159,6 +178,21 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd190cdc1d5ae4d41bfc7578039b8621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Coin: {fileID: 426376282}
+  Weapon: {fileID: 1122910756}
+  Potion: {fileID: 1196923080}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -282,6 +316,25 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 446709197408698177}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &724362983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724362978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 416fedec6bbe15d4fa5ecbb44adf8d6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  coin: 0
+  sword: 1
+  potion: 0
+  jump: 0
+  hit: 0
+  time: 0
 --- !u!4 &724362984 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 446709196041577162, guid: acc590e88dc6d964abaf17c31e276b27,
@@ -390,6 +443,30 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 2
+--- !u!114 &1122910756 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 245851479333272855, guid: dc723fbf012e9e94c946379b9da13b1b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1726848181}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1196923080 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 245851480325318999, guid: dc723fbf012e9e94c946379b9da13b1b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1726848181}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1726848181
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -507,6 +584,66 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1499582552999946161, guid: dc723fbf012e9e94c946379b9da13b1b,
+        type: 3}
+      propertyPath: Coin
+      value: 
+      objectReference: {fileID: 426376282}
+    - target: {fileID: 1499582552999946161, guid: dc723fbf012e9e94c946379b9da13b1b,
+        type: 3}
+      propertyPath: Sword
+      value: 
+      objectReference: {fileID: 1122910756}
+    - target: {fileID: 1499582552999946161, guid: dc723fbf012e9e94c946379b9da13b1b,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 724362978}
+    - target: {fileID: 1499582552999946161, guid: dc723fbf012e9e94c946379b9da13b1b,
+        type: 3}
+      propertyPath: Potion
+      value: 
+      objectReference: {fileID: 1196923080}
+    - target: {fileID: 1499582552999946161, guid: dc723fbf012e9e94c946379b9da13b1b,
+        type: 3}
+      propertyPath: playerHealthBar
+      value: 
+      objectReference: {fileID: 2116950956}
+    - target: {fileID: 5533838346530877807, guid: dc723fbf012e9e94c946379b9da13b1b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5533838346530877807, guid: dc723fbf012e9e94c946379b9da13b1b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5533838346530877807, guid: dc723fbf012e9e94c946379b9da13b1b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 90425602}
+    - target: {fileID: 5533838346530877807, guid: dc723fbf012e9e94c946379b9da13b1b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5533838346530877807, guid: dc723fbf012e9e94c946379b9da13b1b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SaveScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 5533838346530877807, guid: dc723fbf012e9e94c946379b9da13b1b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 724362983}
+    - target: {fileID: 5533838346530877807, guid: dc723fbf012e9e94c946379b9da13b1b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: Player, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc723fbf012e9e94c946379b9da13b1b, type: 3}
 --- !u!1 &1759000680
@@ -594,6 +731,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesLeft: 0
+  sign: {fileID: 90425597}
+--- !u!1 &2116950956 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7504237215228746945, guid: acc590e88dc6d964abaf17c31e276b27,
+    type: 3}
+  m_PrefabInstance: {fileID: 446709197408698177}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2119591791
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,6 +1044,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f24a4f37ce3bea64a82399ffe479f7d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 724362983}
 --- !u!1001 &2237773809351538836
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -975,7 +1120,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 446709197408698177}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2116950956}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07ec38947fa3d5d4aa47f228f1261185, type: 3}

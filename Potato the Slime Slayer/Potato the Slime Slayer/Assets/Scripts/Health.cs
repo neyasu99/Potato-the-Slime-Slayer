@@ -1,12 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
     [SerializeField]
-    private int health = 100;
+    public int health = 100;
 
     [SerializeField]
     private int MAX_HEALTH = 100;
@@ -59,12 +57,11 @@ public class Health : MonoBehaviour
                 Instantiate(coin, new Vector3(gameObject.transform.position.x - 1, 0.8f, -1), Quaternion.Euler(0f, 0f, 0f));
                 amound--;
             }
+            Destroy(gameObject);
         }
         else
         {
-            SceneManager.LoadScene("Lvl");
+            SceneManager.LoadScene("KillScreen");
         }
-
-        Destroy(gameObject);
     }
 }

@@ -10,11 +10,6 @@ public class PlayerLoot : MonoBehaviour
     [SerializeField]
     private Text Coin;
 
-    void Start()
-    {
-        Coin.text = "0";
-    }
-
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.tag.Equals("Coin"))
