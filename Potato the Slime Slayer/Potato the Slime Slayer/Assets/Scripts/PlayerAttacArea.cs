@@ -2,7 +2,7 @@
 
 public class PlayerAttacArea : MonoBehaviour
 {
-    private int damage = 5;
+    private int damage = 0;
 
     public Player Player;
 
@@ -12,7 +12,7 @@ public class PlayerAttacArea : MonoBehaviour
         {
             Health health = collider.GetComponent<Health>();
 
-            damage = damage + Player.sword;
+            damage = damage + Player.Strength;
 
             health.Damage(damage);
         }

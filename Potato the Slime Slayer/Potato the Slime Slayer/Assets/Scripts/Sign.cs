@@ -25,10 +25,15 @@ public class Sign : MonoBehaviour
     {
         Player = GameObject.Find("Player");
         Health health = Player.GetComponent<Health>();
-        player.health = health.health;
-        player.coin = int.Parse(Coin.text);
-        player.sword = int.Parse(Sword.text);
-        player.potion = int.Parse(Potion.text);
+        player.HP = health.health;
+        player.Money = int.Parse(Coin.text);
+        player.Strength = int.Parse(Sword.text);
+        player.HPItem = int.Parse(Potion.text);
+        player.StepCount = Player.GetComponent<Player>().StepCount;
+        player.JumpCount = Player.GetComponent<Player>().JumpCount;
+        player.DeathCount = Player.GetComponent<Player>().DeathCount;
+        player.Lvl = Player.GetComponent<Player>().Lvl;
+        player.HitCount = Player.GetComponent<Player>().HitCount;
 
         SaveSystem.SavePlayer(player);
     }

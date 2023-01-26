@@ -11,8 +11,6 @@ public class Health : MonoBehaviour
 
     public HealthBar healthBar;
 
-    public GameObject coin;
-
     private void Start()
     {
         health = MAX_HEALTH;
@@ -54,7 +52,6 @@ public class Health : MonoBehaviour
             int amound = Random.Range(1, 3);
             while (amound > 0)
             {
-                Instantiate(coin, new Vector3(gameObject.transform.position.x - 1, 0.8f, -1), Quaternion.Euler(0f, 0f, 0f));
                 amound--;
             }
             Destroy(gameObject);

@@ -18,8 +18,8 @@ public class StartLvl : MonoBehaviour
     {
         PlayerData data = SaveSystem.LoadPlayer();
 
-        Coin.text = data.coin.ToString();
-        Weapon.text = data.sword.ToString();
-        Potion.text = data.potion.ToString();
+        Coin.text = data.Money.ToString();
+        Weapon.text = data.Strength.ToString();
+        Potion.text = data.HPItem.ToString();
     }
 }

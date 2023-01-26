@@ -547,7 +547,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 19.799927, y: 0.1}
+  m_AnchoredPosition: {x: 19.799927, y: 0.10000038}
   m_SizeDelta: {x: 60, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &245851480305462252
@@ -894,3 +894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58f710540f9aa7f4ba466af73287f00e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Coin: {fileID: 0}
+  Sword: {fileID: 0}
+  Potion: {fileID: 0}
+  Player: {fileID: 0}

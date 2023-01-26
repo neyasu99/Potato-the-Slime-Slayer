@@ -8,11 +8,13 @@ public class PlayerAttac : MonoBehaviour
     private bool attacking = false;
     private float timeToAttac = 0.25f;
     private float timer = 0f;
-    public Animator animator;
+    public Animator animator; 
+    private GameObject Player;
 
     void Start()
     {
         attacArea = transform.GetChild(1).gameObject;
+        Player = GameObject.Find("Player");
     }
 
     void Update()
@@ -20,6 +22,7 @@ public class PlayerAttac : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Attack();
+            Player.GetComponent<Player>().HitCount++;
         }
 
         if (attacking)

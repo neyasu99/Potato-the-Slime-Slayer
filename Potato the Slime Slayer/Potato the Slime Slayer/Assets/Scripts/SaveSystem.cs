@@ -12,9 +12,9 @@ public static class SaveSystem
 
         PlayerData data = new PlayerData(player);
 
-        Debug.Log("coin: " + data.coin);
-        Debug.Log("sword: " + data.sword);
-        Debug.Log("potion: " + data.potion);
+        Debug.Log("Money: " + data.Money);
+        Debug.Log("Strength: " + data.Strength);
+        Debug.Log("HPItem: " + data.HPItem);
 
         formatter.Serialize(stream, data);
         stream.Close();

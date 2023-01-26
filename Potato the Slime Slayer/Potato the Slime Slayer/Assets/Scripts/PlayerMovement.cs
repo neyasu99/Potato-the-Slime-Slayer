@@ -13,9 +13,14 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundLayer;
     public Animator animator;
 
+    private GameObject Player;
+
     // Start is called before the first frame update
     void Start()
     {
+        Player = GameObject.Find("Player");
+        speed = Player.GetComponent<Player>().Speed;
+        jumpForce = Player.GetComponent<Player>().Jump;
         rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
@@ -31,9 +36,16 @@ public class PlayerMovement : MonoBehaviour
     {
         float inputHorizontal = Input.GetAxisRaw("Horizontal");
         if (inputHorizontal > 0)
+        {
             gameObject.transform.localScale = new Vector3(1, 1, 1);
+            Player.GetComponent<Player>().StepCount++;
+        }
+            
         if (inputHorizontal < 0)
+        {
             gameObject.transform.localScale = new Vector3(-1, 1, 1);
+            Player.GetComponent<Player>().StepCount++;
+        }
         
         float moveBy = inputHorizontal * speed;
         rb.velocity = new Vector2(moveBy, rb.velocity.y);
@@ -46,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            Player.GetComponent<Player>().JumpCount++;
         }
     }
 

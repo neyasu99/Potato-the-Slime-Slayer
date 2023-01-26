@@ -21,7 +21,7 @@ public class EnemySpawner : MonoBehaviour
     private void spawnEnemy(GameObject enemy)
     {
         new WaitForSecondsRealtime(2f);
-        GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-5f, 5), 1.03f, -1.827229f), Quaternion.identity);
+        GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-5f, 5), 1.03f, -1.82f), Quaternion.identity);
     }
 
     void Update()

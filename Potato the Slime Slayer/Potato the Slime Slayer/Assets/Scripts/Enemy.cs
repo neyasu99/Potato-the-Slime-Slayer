@@ -2,20 +2,22 @@
 
 public class Enemy : MonoBehaviour
 {
-    public Transform player;
+    private GameObject player;
     public float moveSpeed = 0.5f;
     private Rigidbody2D rb;
     private Vector2 movement;
     private int damage = 5;
+    private int size = 1;
 
     void Start()
     {
-        rb = this.GetComponent<Rigidbody2D>(); 
+        rb = this.GetComponent<Rigidbody2D>();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Update()
     {
-        Vector3 direction = player.position - transform.position;
+        Vector3 direction = player.transform.position - transform.position;
         direction.Normalize();
         movement = direction;
     }
