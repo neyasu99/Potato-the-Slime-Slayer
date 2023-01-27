@@ -3,10 +3,10 @@
 public class Enemy : MonoBehaviour
 {
     private GameObject player;
-    public float moveSpeed = 0.5f;
+    public float enemySpeed = 0.5f;
+    public int enemyStrength = 5;
     private Rigidbody2D rb;
     private Vector2 movement;
-    private int damage = 5;
     private int size = 1;
 
     void Start()
@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour
 
     void moveCharacter(Vector2 direction)
     {
-        rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
+        rb.MovePosition((Vector2)transform.position + (direction * enemySpeed * Time.deltaTime));
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour
         if (collider.GetComponent<Health>() != null)
         {
             Health health = collider.GetComponent<Health>();
-            health.Damage(damage);
+            health.Damage(enemyStrength);
         }
     }
 }

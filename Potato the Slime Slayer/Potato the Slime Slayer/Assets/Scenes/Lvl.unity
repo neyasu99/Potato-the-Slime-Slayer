@@ -1094,6 +1094,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platform: {fileID: 2785434657173382647, guid: 318b6da79f279344ea6299adf7624b01,
     type: 3}
+  platformJoke: {fileID: 2785434657173382647, guid: 318b6da79f279344ea6299adf7624b01,
+    type: 3}
+  NPC: {fileID: 664927167072492997, guid: d85c2ac38daecd64ea54d48dae6b914f, type: 3}
 --- !u!1 &1996018978 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 245851478638954088, guid: dc723fbf012e9e94c946379b9da13b1b,
