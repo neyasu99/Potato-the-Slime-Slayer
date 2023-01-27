@@ -4,20 +4,20 @@ using UnityEngine.SceneManagement;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField]
-    private GameObject enemy;
+    private GameObject Enemy;
 
-    [SerializeField]
-    public GameObject Player;
 
+    private GameObject Player;
     private Player player;
+    private Enemy enemy;
     private float enemiesNumber;
 
     void Start()
     {
         Player = GameObject.Find("Player");
         player = Player.GetComponent<Player>();
+        enemy = Enemy.GetComponent<Enemy>();
         Scene scene = SceneManager.GetActiveScene();
-        enemiesNumber = Random.Range(1, 5);
 
         if (scene.name == "FirstLvl")
         {
@@ -25,15 +25,16 @@ public class EnemySpawner : MonoBehaviour
         }
         else
         {
-            enemiesNumber = player.Strength * player.Speed;
-            enemy.GetComponent<Enemy>().enemyStrength = enemy.GetComponent<Enemy>().enemyStrength + player.Lvl;
-            enemy.GetComponent<Enemy>().enemySpeed = enemy.GetComponent<Enemy>().enemySpeed + (player.Lvl * 0.05f);
+            enemiesNumber = player.Strength * player.Speed + player.Lvl;
+            Enemy.GetComponent<SpriteRenderer>().color = new Color(255, enemy.enemyStrength, 255, enemy.enemyStrength);
+            enemy.enemyStrength = enemy.enemyStrength + player.Lvl;
+            enemy.enemySpeed = enemy.enemySpeed + (player.Lvl * 0.05f);
         }
 
         while (enemiesNumber >= 1)
         {
             enemiesNumber--;
-            spawnEnemy(enemy);
+            spawnEnemy(Enemy);
         }
     }
 

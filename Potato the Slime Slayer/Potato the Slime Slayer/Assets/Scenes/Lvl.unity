@@ -1732,9 +1732,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8814369235160040071, guid: ffa7f3b63949b12468d7e1d2179d0a72,
         type: 3}
+      propertyPath: Enemy
+      value: 
+      objectReference: {fileID: 1673377230496100197, guid: b9aa530b064f9fe429de874d12300353,
+        type: 3}
+    - target: {fileID: 8814369235160040071, guid: ffa7f3b63949b12468d7e1d2179d0a72,
+        type: 3}
       propertyPath: enemy
       value: 
       objectReference: {fileID: 1673377230496100197, guid: b9aa530b064f9fe429de874d12300353,
+        type: 3}
+    - target: {fileID: 8814369235160040071, guid: ffa7f3b63949b12468d7e1d2179d0a72,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 8643811660506133804, guid: f71546e328162d04bb7012e8da4d3017,
         type: 3}
     - target: {fileID: 8814369235160040071, guid: ffa7f3b63949b12468d7e1d2179d0a72,
         type: 3}

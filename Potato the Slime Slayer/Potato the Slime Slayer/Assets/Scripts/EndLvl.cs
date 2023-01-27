@@ -12,6 +12,9 @@ public class EndLvl : MonoBehaviour
 
     private bool showChest = false;
 
+    private GameObject Player;
+    private Player player;
+
     // Update is called once per frame
     void Update()
     {
@@ -27,6 +30,10 @@ public class EndLvl : MonoBehaviour
         {
             ShowChest();
             sign.SetActive(true);
+
+            Player = GameObject.Find("Player");
+            player = Player.GetComponent<Player>();
+            player.Lvl++;
         }
     }
 

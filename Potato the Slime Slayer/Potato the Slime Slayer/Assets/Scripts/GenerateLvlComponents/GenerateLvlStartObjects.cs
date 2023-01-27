@@ -25,6 +25,7 @@ public class GenerateLvlStartObjects : MonoBehaviour
             else
                 Instantiate(platformJoke, new Vector3(Random.Range(-1.8f, 1.8f), Random.Range(2, 2.3f), -1.82f), Quaternion.identity);
         }
+
         //NPC nie zawsze w sklepie
         //if(scene.name == "NPC")
         //{

@@ -32,7 +32,7 @@ public class Sign : MonoBehaviour
         player.StepCount = Player.GetComponent<Player>().StepCount;
         player.JumpCount = Player.GetComponent<Player>().JumpCount;
         player.DeathCount = Player.GetComponent<Player>().DeathCount;
-        player.Lvl = Player.GetComponent<Player>().Lvl + 1;
+        player.Lvl = Player.GetComponent<Player>().Lvl;
         player.HitCount = Player.GetComponent<Player>().HitCount;
 
         SaveSystem.SavePlayer(player);
