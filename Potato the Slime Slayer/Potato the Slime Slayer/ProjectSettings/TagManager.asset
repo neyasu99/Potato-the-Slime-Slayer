@@ -9,6 +9,9 @@ TagManager:
   - Ground
   - Platform
   - Background
+  - Chest
+  - Potion
+  - Boss
   layers:
   - Default
   - TransparentFX

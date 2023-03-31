@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/KillScreen.unity
     guid: 2f9f0a4621bcead4387fdaac2917deb1
+  - enabled: 1
+    path: Assets/Scenes/BossLvl.unity
+    guid: d95be633961bf9846bca17ed986506fe
   m_configObjects: {}

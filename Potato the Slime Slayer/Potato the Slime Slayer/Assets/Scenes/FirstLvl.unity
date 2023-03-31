@@ -170,11 +170,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5575c02022c8fe4cba25c6e45f14867, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platform: {fileID: 2785434657173382647, guid: 318b6da79f279344ea6299adf7624b01,
+  platform: {fileID: 1993986343584469281, guid: 318b6da79f279344ea6299adf7624b01,
     type: 3}
-  platformJoke: {fileID: 2785434657173382647, guid: 318b6da79f279344ea6299adf7624b01,
+  platformJoke: {fileID: 1993986343584469281, guid: 318b6da79f279344ea6299adf7624b01,
     type: 3}
   NPC: {fileID: 664927167072492997, guid: d85c2ac38daecd64ea54d48dae6b914f, type: 3}
+  bossPlatform: {fileID: 0}
 --- !u!114 &159506883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -646,6 +647,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5533838346530877807, guid: dc723fbf012e9e94c946379b9da13b1b,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Lvl
+      objectReference: {fileID: 0}
+    - target: {fileID: 5533838346530877807, guid: dc723fbf012e9e94c946379b9da13b1b,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 9784837}
@@ -730,7 +736,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemiesLeft: 0
   sign: {fileID: 1670216306}
-  coin: {fileID: 3668229934509321691, guid: 6c5eb4363e4b26e4db65a9c72708548a, type: 3}
+  chest: {fileID: 1670216312}
+--- !u!1 &1670216312 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1030351006877517734, guid: dc723fbf012e9e94c946379b9da13b1b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1670216304}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1881539348
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -878,6 +890,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643811660506133798, guid: f71546e328162d04bb7012e8da4d3017,
+        type: 3}
+      propertyPath: checkGroundRadius
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 8643811660506133801, guid: f71546e328162d04bb7012e8da4d3017,
         type: 3}

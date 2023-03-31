@@ -7,7 +7,7 @@ public class Health : MonoBehaviour
     public int health = 100;
 
     [SerializeField]
-    private int MAX_HEALTH = 100;
+    public int MAX_HEALTH = 100;
 
     public HealthBar healthBar;
 
@@ -47,7 +47,7 @@ public class Health : MonoBehaviour
     {
         Debug.Log("I am Dead!");
 
-        if (gameObject.tag.Equals("Enemy"))
+        if (gameObject.tag.Equals("Enemy") || gameObject.tag.Equals("Boss"))
         {
             int amound = Random.Range(1, 3);
             while (amound > 0)

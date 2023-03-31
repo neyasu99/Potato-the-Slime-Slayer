@@ -85,24 +85,26 @@ public class NPCBehavior : MonoBehaviour
 
         if(MarketFrame.enabled == true)
         {
+            PlayerData data = SaveSystem.LoadPlayer();
+
             int weaponPrice = Int32.Parse(Weapon.text);
-            if (weaponPrice == 0)
+            if (data.Lvl / 3 == 0) 
             {
                 WeaponPrice.text = "2";
             }
             else
             {
-                WeaponPrice.text = (weaponPrice * 2).ToString();
+                WeaponPrice.text = ((weaponPrice * 2) + (data.Lvl / 3)).ToString();
             }
 
             int potionPrice = Int32.Parse(Potion.text);
-            if (potionPrice == 0)
+            if (data.Lvl / 3 == 0)
             {
                 PotionPrice.text = "3";
             }
             else
             {
-                PotionPrice.text = (potionPrice * 3).ToString();
+                PotionPrice.text = ((potionPrice * 3) + (data.Lvl / 3)).ToString();
             }
         }
     }

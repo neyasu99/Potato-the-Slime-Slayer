@@ -18,22 +18,36 @@ public class Sign : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        Scene scene = SceneManager.GetActiveScene();
+        if (scene.name == "NPC")
+            SceneManager.LoadScene(sceneName);
+        else
+        {
+            Player = GameObject.Find("Player");
+            Player playerFromComponent = Player.GetComponent<Player>();
+            if (playerFromComponent.Lvl % 10 == 0)
+                SceneManager.LoadScene("BossLvl");
+            else if (playerFromComponent.Lvl % 3 == 0)
+                SceneManager.LoadScene("NPC");
+            else
+                SceneManager.LoadScene(sceneName);
+        }
     }
 
     public void SaveScene(Player player)
     {
         Player = GameObject.Find("Player");
-        Health health = Player.GetComponent<Health>();
+        Player playerFromComponent = Player.GetComponent<Player>();
+        PlayerHealth health = Player.GetComponent<PlayerHealth>();
         player.HP = health.health;
         player.Money = int.Parse(Coin.text);
-        player.Strength = int.Parse(Sword.text);
+        player.Strength = playerFromComponent.Strength;
         player.HPItem = int.Parse(Potion.text);
-        player.StepCount = Player.GetComponent<Player>().StepCount;
-        player.JumpCount = Player.GetComponent<Player>().JumpCount;
-        player.DeathCount = Player.GetComponent<Player>().DeathCount;
-        player.Lvl = Player.GetComponent<Player>().Lvl;
-        player.HitCount = Player.GetComponent<Player>().HitCount;
+        player.StepCount = playerFromComponent.StepCount;
+        player.JumpCount = playerFromComponent.JumpCount;
+        player.DeathCount = playerFromComponent.DeathCount;
+        player.Lvl = playerFromComponent.Lvl;
+        player.HitCount = playerFromComponent.HitCount;
 
         SaveSystem.SavePlayer(player);
     }

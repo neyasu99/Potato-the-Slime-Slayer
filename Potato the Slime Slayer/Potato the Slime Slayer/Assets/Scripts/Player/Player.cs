@@ -6,7 +6,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public int HP = 100;
-    public int Strength = 1;
+    public int Strength = 5;
     public float Speed = 5f;
     public int Step = 1;
     public int StepCount = 0;
@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     public int MoneySpend = 0;
     public int ItemsUsed = 0;
     public int HPItem = 0;
+    public int StrengthItem = 0;
     public int HitCount = 0;
     public int Size = 1;
     public int Lvl = 0;
@@ -53,6 +54,7 @@ public class Player : MonoBehaviour
         MoneySpend = data.MoneySpend;
         ItemsUsed = data.ItemsUsed;
         HPItem = data.HPItem;
+        StrengthItem = data.StrengthItem;
         HitCount = data.HitCount;
         Size = data.Size;
         Lvl = data.Lvl;

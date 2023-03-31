@@ -18,6 +18,7 @@ public class PlayerData
     public int MoneySpend;
     public int ItemsUsed;
     public int HPItem;
+    public int StrengthItem;
     public int HitCount;
     public int Size;
     public int Lvl;
@@ -39,6 +40,7 @@ public class PlayerData
         MoneySpend = player.MoneySpend;
         ItemsUsed = player.ItemsUsed;
         HPItem = player.HPItem;
+        StrengthItem = player.StrengthItem;
         HitCount = player.HitCount;
         Size = player.Size;
         Lvl = player.Lvl;

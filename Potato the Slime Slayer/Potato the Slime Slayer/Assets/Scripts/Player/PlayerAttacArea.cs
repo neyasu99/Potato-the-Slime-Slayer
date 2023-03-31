@@ -2,7 +2,7 @@
 
 public class PlayerAttacArea : MonoBehaviour
 {
-    private int damage = 0;
+    private int damage = 10;
 
     public Player Player;
 

@@ -6,7 +6,6 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private GameObject Enemy;
 
-
     private GameObject Player;
     private Player player;
     private Enemy enemy;
@@ -25,28 +24,22 @@ public class EnemySpawner : MonoBehaviour
         }
         else
         {
-            enemiesNumber = player.Strength * player.Speed + player.Lvl;
+            enemiesNumber = Random.Range(2, 5) + (player.Lvl * 0.3f);
             Enemy.GetComponent<SpriteRenderer>().color = new Color(255, enemy.enemyStrength, 255, enemy.enemyStrength);
-            enemy.enemyStrength = enemy.enemyStrength + player.Lvl;
-            enemy.enemySpeed = enemy.enemySpeed + (player.Lvl * 0.05f);
+            enemy.enemyStrength = 5;
+            enemy.enemySpeed = 0.5f;
         }
 
         while (enemiesNumber >= 1)
         {
             enemiesNumber--;
-            spawnEnemy(Enemy);
+            spawnEnemy(Enemy, new Vector3(Random.Range(-1.82f, 1.82f), 1.03f, -1.82f));
         }
     }
 
-    private void spawnEnemy(GameObject enemy)
+    private void spawnEnemy(GameObject enemy, Vector3 position)
     {
         new WaitForSecondsRealtime(2f);
-        //uziemić enamy żeby mógł spadać/skakać
-        GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-1.82f, 1.82f), 1.03f, -1.82f), Quaternion.identity);
-    }
-
-    void Update()
-    {
-
+        GameObject newEnemy = Instantiate(enemy, position, Quaternion.identity);
     }
 }
